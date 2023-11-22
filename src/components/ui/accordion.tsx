@@ -91,7 +91,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>(
             </label>
             <div
               className="pl-[100px] xl:pl-[150px] xl:pt-[17px] w-full max-h-0 overflow-hidden peer-checked:max-h-full border-b border-primary-grey 
-              transition-opacity duration-[0.25s] ease-[ease-out]"
+              transition-opacity duration-200 ease-out"
             >
               <p className="text-base xl:text-lg text-primary-white pb-5 =xl:pb-[30px]">
                 {d.subtitle}

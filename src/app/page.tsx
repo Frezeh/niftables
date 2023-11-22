@@ -27,7 +27,7 @@ export default function Home() {
           </video>
           <div className="absolute bottom-20 ml-[-15px] ">
             <h1 className="hidden xl:block text-primary-white 3xl:text-[68px] text-6xl leading-[110%] uppercase font-monument">
-              The world's first <br /> platform for Tokenizing <br /> AI
+              The world&apos;s first <br /> platform for Tokenizing <br /> AI
               blockchain projects
             </h1>
             <h1 className="xl:hidden text-primary-white text-[32px] md:text-[44px] md:w-1/2 lg:w-full leading-[110%] uppercase font-monument mr-1">

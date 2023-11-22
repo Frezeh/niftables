@@ -29,7 +29,7 @@ export default function ComingSoon() {
   return (
     <section
       className="px-[15px] md:px-[30px] xl:px-52 3xl:px-60 lg:grid grid-cols-3 py-14 gap-5 xl:gap-10 flex 
-      overflow-x-scroll no-scrollbar snap-mandatory snap-x z-[100px]"
+      overflow-x-scroll no-scrollbar snap-mandatory snap-x"
     >
       {data.map((d, i) => (
         <div
@@ -50,7 +50,7 @@ export default function ComingSoon() {
           <div className="relative pr-5 cursor-pointer pb-[18px] xl:pb-7 rounded-lg">
             <div
               className="border-y-[3px] border-r-[3px] border-primary-black rounded-tr-lg rounded-br-lg overflow-hidden 
-            relative [&>img]:hover:scale-110 [&>img]:transition-all [&>img]:duration-[1s] [&>img]:ease-[ease]"
+            relative [&>img]:hover:scale-110 [&>img]:transition-all [&>img]:duration-1000 [&>img]:ease-out"
             >
               <div className="absolute z-10 inset-0 bg-gradient-to-b from-primary-purple to-primary-blue mix-blend-color" />
               <Image

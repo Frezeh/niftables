@@ -11,7 +11,7 @@ const items = [
 export default function CreonPass() {
   return (
     <section className="px-[15px] md:px-[30px] 2xl:px-60 lg:grid grid-cols-2 gap-10 relative py-14 xl:py-20">
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center z-10">
         <h2 className="text-primary-white 3xl:text-[68px] xl:text-6xl md:text-[44px] text-[32px] leading-[110%] uppercase font-monument">
           creon pass nft
         </h2>

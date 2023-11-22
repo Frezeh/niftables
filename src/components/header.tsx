@@ -5,8 +5,8 @@ import { Button } from "./ui/button";
 
 export default function Header() {
   return (
-    <header className="top-0 z-50 px-[15px] sm:px-[30px] xl:px-[50px] py-5 xl:py-[30px]">
-      <nav className="flex justify-between">
+    <header className="sticky xl:static top-0 z-50 px-[15px] sm:px-[30px] xl:px-[50px] py-5 xl:py-[30px]">
+      <nav className="flex justify-between sticky">
         <Link href="/">
           <Image
             src="/assets/images/logo.svg"
