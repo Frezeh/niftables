@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --purple: #ab23ff;
+    --black: #000;
+    --white: #fff;
+    --blue: #3d8bff;
+    --grey: #13171d;
+    --animation-curve: cubic-bezier(1, 0, 0, 1);
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) var(--black);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    flex-shrink: 0;
+    background: #000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #ab23ff;
+    border-radius: 1px;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#3D8BFF] to-[#AB23FF] bg-clip-text text-transparent;
+    /* -webkit-background-clip: text !important;  */
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header-toggle {
+    &::before,
+    &::after {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background-color: black;
+      position: absolute;
+      display: block;
+      color: white;
+      transition: all 0.6s var(--animation-curve);
+    }
+    &::before {
+      top: -320%;
+      left: 0%;
+      transform: rotateZ(0deg);
+      transform-origin: left top;
+    }
+    &::after {
+      bottom: -300%;
+      left: 0%;
+      transform: rotateZ(0deg);
+      transform-origin: left bottom;
+    }
+  }
+
+  #toggle:checked ~ ::before {
+    content: "";
+    background-color: white;
+    transform: rotateZ(45deg);
+    left: 10%;
+  }
+  #toggle:checked ~ ::after {
+    content: "";
+    background-color: white;
+    transform: rotateZ(-40deg);
+    left: 10%;
+  }
+  #toggle:checked ~ span {
+    background-color: var(--blue);
+  }
+  #toggle ~ {
+    transition: all 0.5s var(--animation-curve);
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
