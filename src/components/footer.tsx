@@ -97,7 +97,7 @@ export default function Footer() {
           ></path>
         </svg>
       </a>
-      <div className="absolute w-full left-0 bottom-0 opacity-40 md:opacity-[0.15]">
+      <div className="absolute w-full left-0 bottom-0 opacity-40 md:opacity-[0.15] pointer-events-none">
         <div className="w-full h-full relative">
           <div className="absolute inset-0 bg-gradient-to-b from-primary-purple to-primary-blue mix-blend-soft-light" />
 
