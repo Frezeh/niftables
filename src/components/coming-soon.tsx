@@ -28,7 +28,7 @@ const data = [
 export default function ComingSoon() {
   return (
     <section
-      className="px-[15px] md:px-[30px] xl:px-52 3xl:px-60 lg:grid grid-cols-3 py-14 gap-5 xl:gap-10 flex 
+      className="px-[15px] md:px-[30px] 2xl:px-52 3xl:px-60 lg:grid grid-cols-3 py-14 gap-5 xl:gap-10 flex 
       overflow-x-scroll no-scrollbar snap-mandatory snap-x"
     >
       {data.map((d, i) => (
