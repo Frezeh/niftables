@@ -1,11 +1,20 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 
 export default function Header() {
+  const preventScroll = () => {
+    if (document.body.style.overflow === "hidden") {
+      document.body.style.overflow = "unset";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
+
   return (
-    <header className="sticky xl:static top-0 z-50 px-[15px] sm:px-[30px] xl:px-[50px] py-5 xl:py-[30px]">
+    <header className="top-0 z-50 px-[15px] sm:px-[30px] xl:px-[50px] py-5 xl:py-[30px]">
       <nav className="flex justify-between sticky">
         <Link href="/">
           <Image
@@ -83,6 +92,7 @@ export default function Header() {
               type="checkbox"
               id="toggle"
               className="relative sr-only peer"
+              onChange={preventScroll}
             />
             <span className="w-[38px] z-20 bg-white rounded-lg" />
             <label
