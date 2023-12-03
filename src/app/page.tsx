@@ -1,3 +1,4 @@
+"use client"
 import Footer from "@/components/footer";
 import AIScreen from "@/components/ai-screen";
 import CreonPass from "@/components/creon-pass";

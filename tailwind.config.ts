@@ -28,6 +28,16 @@ const config: Config = {
         satoshi: ["var(--font-satoshi)"],
         monument: ["var(--font-monument)"],
       },
+      keyframes: {
+        "slideDown": {
+          from: { "max-height": "0px", opacity: "0" },
+          to: { "max-height": "var(--accordion-content-height)", opacity: "1" },       
+        },
+        "slideUp": {
+          from: { height: "var(--accordion-content-height)"},
+          to: { height: "0px" },
+        },
+      }
     },
   },
   plugins: [],

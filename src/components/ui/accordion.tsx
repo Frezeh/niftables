@@ -10,6 +10,29 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Accordion = React.forwardRef<HTMLDivElement, Props>(
   ({ className, data, ...props }, ref) => {
+
+    const refs = React.useMemo(() => {
+      return (
+        data.map(() => {
+          return React.createRef<HTMLInputElement>();
+        }) ?? []
+      );
+    }, [data]);
+
+    function closeOtherContents(id: string) {
+      const otherRefs = refs.filter((ref) => {
+        return ref.current?.getAttribute("id") !== `accordion${id}`;
+      });
+
+      otherRefs.forEach((ref) => {
+        const isOpen = ref.current?.checked;
+
+        if (isOpen) {
+          ref.current?.click();
+        }
+      });
+    }
+
     return (
       <div
         className={`space-y-1 xl:space-y-[30px] xl:mt-0 z-10 ${className}`}
@@ -22,6 +45,8 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>(
               type="checkbox"
               id={`accordion${i}`}
               className="sr-only w-full peer z-20"
+              ref={refs[i]}
+              onChange={() => closeOtherContents(String(i))}
             />
             <label
               htmlFor={`accordion${i}`}
@@ -90,10 +115,10 @@ export const Accordion = React.forwardRef<HTMLDivElement, Props>(
               </div>
             </label>
             <div
-              className="pl-[100px] xl:pl-[150px] xl:pt-[17px] w-full max-h-0 overflow-hidden peer-checked:max-h-full border-b border-primary-grey 
-              transition-opacity duration-200 ease-out"
+              className="pl-[100px] xl:pl-[150px] xl:pt-[17px] w-full overflow-hidden border-b border-primary-grey peer-checked:h-full
+              transition-all peer-checked:animate-[slideDown_300ms_ease-out] animate-[slideUp_300ms_ease-out] [&>p]:peer-checked:block"
             >
-              <p className="text-base xl:text-lg text-primary-white pb-5 =xl:pb-[30px]">
+              <p className="text-base xl:text-lg text-primary-white pb-5 xl:pb-[30px] hidden">
                 {d.subtitle}
               </p>
             </div>
